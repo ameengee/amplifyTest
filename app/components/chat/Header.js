@@ -9,6 +9,9 @@ import { addChat } from '@/app/redux/slices/asstListSlice'
 import { newChatHistory } from '@/app/redux/slices/currentChatSlice';
 import { exitEditMode } from '@/app/redux/slices/editAsstSlice';
 
+import axios from 'axios';
+import { useState } from 'react';
+
 const Header = () => {
   const currentAssisstant = useSelector(state => state.asstList.currentAssisstant);
   const currentChat = useSelector(state => state.asstList.currentChat);
@@ -27,6 +30,20 @@ const Header = () => {
     dispatch(exitEditMode());
   }
 
+  const [response, setResponse] = useState(null);
+
+  const callLambda = async () => {
+    try {
+      const res = await axios.get('https://inlkgx0dy9.execute-api.us-west-1.amazonaws.com/dev');
+      setResponse(res.data);
+      console.log(response);
+    } catch (error) {
+      console.error('Error calling Lambda:', error);
+      setResponse('Error occurred');
+      console.log(response);
+    }
+  };
+
   return (
     <div className="header">
       <div className="chat-btns-container">
@@ -44,7 +61,7 @@ const Header = () => {
         <h2 className='assisstant-name'>{`${currentAssisstant} - ${currentChat}`}</h2>
       </div>
       <div className='login-btn-container'>
-        <button className='login-btn'>Login</button>
+        <button className='login-btn' onClick={callLambda}>Login</button>
       </div>
     </div>
   );
