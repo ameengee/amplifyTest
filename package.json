@@ -1,5 +1,5 @@
 {
-  "name": "crawlai-tailwind-v1",
+  "name": "formal-crawlai-v1",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,19 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome": "^1.1.8",
-    "@fortawesome/fontawesome-free": "^6.7.1",
-    "@fortawesome/free-solid-svg-icons": "^6.7.1",
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@reduxjs/toolkit": "^2.4.0",
+    "@reduxjs/toolkit": "^2.3.0",
     "next": "15.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-redux": "^9.1.2",
-    "redux": "^5.0.1"
+    "react-redux": "^9.1.2"
   },
   "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3"
   }
 }

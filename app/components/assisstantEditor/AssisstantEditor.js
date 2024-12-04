@@ -1,4 +1,4 @@
-// import './editor.css'
+import './editor.css'
 
 import { useState, useEffect } from 'react';
 
@@ -60,7 +60,7 @@ const AssisstantEditor = () => {
   if (!asstEditorOpen) return null;
   
   return (
-    <div className={`edit-container ${navOpen ? "nav-open" : ""} bg-orange-500`}>
+    <div className={`edit-container ${navOpen ? "nav-open" : ""}`}>
 
       <div className='asst-name-editor'>
         <h3 className='asst-name'>Assisstant Name</h3>

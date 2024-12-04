@@ -1,4 +1,4 @@
-//import './nav.css'
+import './nav.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
@@ -50,7 +50,7 @@ const Nav = () => {
   if (!navOpen) return null;
 
   return (
-    <div className="bg-red-500">
+    <div className="nav-container">
       <div className='add-asst-container'>
         <button onClick={handleAddAssisstant} className='add-asst-btn'>
           Add Assisstant

@@ -10,6 +10,7 @@ const ChatHistory = () => {
   useEffect(() => {
     if (bottomRef.current) {
       bottomRef.current.scrollIntoView({ behaviour: "smooth" });
+      console.log(humanChat[1]);
     }
   }, [humanChat, aiChat])
 

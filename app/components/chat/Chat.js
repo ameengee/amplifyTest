@@ -1,4 +1,4 @@
-// import './chatStyles.css';
+import './chatStyles.css';
 
 import React from 'react'
 
@@ -21,21 +21,17 @@ const Chat = () => {
   }
 
   return (
-    <div className="w-full flex flex-col h-screen">
+    <div className="chat-container">
       <Header />
-      <div
-        className={`flex-1 flex flex-col mt-20 transition-transform duration-300 ease-in-out ${
-          navOpen ? "translate-x-[20%]" : ""
-        }`}
-      >
-        <div
-          className="flex-1 overflow-y-auto bg-green-400 mx-auto w-3/5"
-          style={{ height: `calc(100% - 80px - ${height - 30}px)` }}
-        >
+      <div className={`chat-body ${navOpen ? "nav-open" : ""}`} style={{height: `calc(100% - max(8vh, 50px) - ${height - 30}px)`}}>
+        <div className='chat-history-container'>
           <ChatHistory />
         </div>
-        <Input />
+        <div className={`input-container ${navOpen ? "nav-open" : ""}`} style={{height: `${height + 30}px`}}>
+          <Input />
+        </div>
       </div>
+
     </div>
   );
 }

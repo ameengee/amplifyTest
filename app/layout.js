@@ -1,4 +1,15 @@
-import "./globals.css";
+import localFont from 'next/font/local'
+
+const fontAwesome = localFont({
+  src: [
+    {
+      path: '../public/fonts/fa-solid-900.woff2',
+      weight: '900',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-awesome'
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -8,7 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${fontAwesome.variable} font-sans`}>
         {children}
       </body>
     </html>

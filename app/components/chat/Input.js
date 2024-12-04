@@ -43,18 +43,18 @@ const Input = () => {
   };
 
   return (
-    <div className='w-full bg-white flex items-center justify-center fixed bottom-0' style={{height: `${height + 30}px`}}>
-      <form onSubmit={handleSubmit} className='bg-slate-100 w-1/2 flex items-center justify-around rounded-3xl mb-2 focus-within:ring-2 focus-within:ring-black'>
+    <div className='form-container' style={{height: `${height}px`}}>
+      <form onSubmit={handleSubmit} className='input-form'>
         <textarea
           ref={inputRef}
-          className="w-[86%] rounded-2xl resize-none bg-inherit text-lg outline-none p-2"
+          className="input-field"
           placeholder="Message Your Assisstant"
           value={input}
           onChange={handleChange}
           onKeyDown={handleKeyPress}
           style={{height: `${height}px`}}
         />
-        <button type="submit" className="w-[8%] h-10 btns">
+        <button type="submit" className="send-button">
           <FontAwesomeIcon icon={faChevronUp} />
         </button>
       </form>

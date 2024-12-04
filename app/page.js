@@ -1,7 +1,8 @@
 'use client';
 
-import './globals.css';
+import './globalStyles.css';
 
+import { useEffect } from 'react';
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
 
@@ -27,7 +28,7 @@ const App = () => {
   */
 
   return (
-    <div className='w-screen h-screen overflow-x-hidden'>
+    <div>
       <Provider store={store}>
         <Chat />
         <Nav />

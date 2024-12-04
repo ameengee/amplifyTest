@@ -7,6 +7,9 @@
   position: absolute;
   top: 0;
   transition: width 0.3s ease, margin-left 0.3s ease;
+/*
+  align-items: center;
+*/
 }
 
 .edit-container.nav-open {
