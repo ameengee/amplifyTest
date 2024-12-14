@@ -29,7 +29,7 @@ const Header = () => {
 
   const callLambda = async () => {
     try {
-      const response = await fetch('/api/call-lambda', {
+      const response = await fetch('../../api/call-lambda', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ key: 'value' }) // The payload
