@@ -9,9 +9,6 @@ import { addChat } from '@/app/redux/slices/asstListSlice'
 import { newChatHistory } from '@/app/redux/slices/currentChatSlice';
 import { exitEditMode } from '@/app/redux/slices/editAsstSlice';
 
-import axios from 'axios';
-import { useState } from 'react';
-
 const Header = () => {
   const currentAssisstant = useSelector(state => state.asstList.currentAssisstant);
   const currentChat = useSelector(state => state.asstList.currentChat);
@@ -30,19 +27,19 @@ const Header = () => {
     dispatch(exitEditMode());
   }
 
-  const [response, setResponse] = useState(null);
-
   const callLambda = async () => {
     try {
-      const res = await axios.get('https://inlkgx0dy9.execute-api.us-west-1.amazonaws.com/dev');
-      setResponse(res.data);
-      console.log(response);
+      const response = await fetch('/api/call-lambda', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ key: 'value' }) // The payload
+      });
+      const data = await response.json();
+      console.log('Response from Lambda:', data);
     } catch (error) {
-      console.error('Error calling Lambda:', error);
-      setResponse('Error occurred');
-      console.log(response);
+      console.error('Error calling API:', error);
     }
-  };
+  };  
 
   return (
     <div className="header">
