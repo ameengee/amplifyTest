@@ -2,7 +2,7 @@ import AWS from 'aws-sdk';
 
 const lambda = new AWS.Lambda();
 
-export async function POST(request) {
+export default async function handler(request) {
   const body = await request.json(); // Get the payload from the request
   const params = {
     FunctionName: 'on-user-message', // Replace with your Lambda function name
